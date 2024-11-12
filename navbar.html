@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar avec Étoiles</title>
+    <link rel="stylesheet" href="assets/stylesheets/style.css"> <!-- Lien vers le fichier CSS -->
+    <style>
+        /* Style pour le mode sombre de la partie main */
+        main {
+            background-color: #2f2f2f; /* Gris foncé */
+            color: white; /* Couleur du texte en blanc pour le contraste */
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px; /* Bords légèrement arrondis pour un effet moderne */
+            margin: 20px auto;
+            max-width: 800px; /* Largeur maximale pour centrer le contenu */
+        }
+
+        /* Style pour le bouton vers la page index */
+        .btn-index {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #470352; /* Couleur de fond du bouton */
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-index:hover {
+            background-color: #9661a6; /* Couleur de fond au survol */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="navbar-list">
+            <li class="navbar-item"><button class="btn">Accueil</button></li>
+            <li class="navbar-item"><button class="btn">Mon profil</button></li>
+            <li class="navbar-item"><button class="btn">Éditer le profil</button></li>
+            <li class="navbar-item navbar-auth-only"><button class="btn">Mes inscriptions</button></li> <!-- Visible si utilisateur connecté -->
+            <li class="navbar-item"><button class="btn">Créer un événement</button></li>
+            <li class="navbar-item navbar-auth-only"><button class="btn">Se déconnecter</button></li> <!-- Visible si utilisateur connecté -->
+        </ul>
+    </nav>
+    
+    <main>
+        <p>Ceci est la page de la navbar.</p>
+        <a href="index.html" class="btn-index">Retour à l'Index</a> <!-- Bouton vers la page index -->
+    </main>
+
+    <script>
+        // Simule si l'utilisateur est connecté (à adapter avec la logique réelle de votre projet)
+        const userConnected = true; // Changer à false pour tester l'état déconnecté
+
+        // Montre ou cache les éléments en fonction de l'état de connexion
+        document.querySelectorAll('.navbar-auth-only').forEach(item => {
+            item.style.display = userConnected ? 'block' : 'none';
+        });
+    </script>
+
+</body>
+</html>
